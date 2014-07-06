@@ -1,0 +1,19 @@
+{
+    "name": "kasonyang/smarty4hiano",
+    "description": "Hiano上的Smarty驱动",
+    "authors": [
+        {
+            "name": "kasonyang",
+            "email": "i@kasonyang.com"
+        }
+    ],
+    "require": {
+        "kasonyang/hiano": "dev-master",
+        "smarty/smarty"   : "*"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Smarty4Hiano\\" : "src"
+        }
+    }
+}
