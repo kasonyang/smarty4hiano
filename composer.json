@@ -8,8 +8,8 @@
         }
     ],
     "require": {
-        "kasonyang/hiano": "dev-master",
-        "smarty/smarty"   : "*"
+        "kasonyang/hiano": ">0.1.0",
+        "smarty/smarty"   : "v3.1.18"
     },
     "autoload" : {
         "psr-4" : {
