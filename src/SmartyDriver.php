@@ -73,21 +73,19 @@ class SmartyDriver implements \Hiano\View\ViewDriverInterface {
         return \Hiano\App\App::getBaseUrl() . $path . $params['uri'];
     }
 
-    /*
-      static function block_form($params, $content, Smarty_Internal_Template $template, &$repeat) {
-      if (!$repeat) {
-      $ret = '<form';
-      if ($params) {
-      foreach ($params as $key => $value) {
-      $ret .= ' ' . $key . '="' . $value . '"';
-      }
-      }
-      $ret .= ">\n" . $content . '<input type="hidden" name="__Token" value="' . spToken::generate('hiano_form') . '" /></form>';
-      return $ret;
-      }
-      }
-     * 
-     */
+    
+    static function block_form($params, $content, Smarty_Internal_Template $template, &$repeat) {
+        if (!$repeat) {
+            $ret = '<form';
+            if ($params) {
+                foreach ($params as $key => $value) {
+                    $ret .= ' ' . $key . '="' . $value . '"';
+                }
+            }
+            $ret .= ">\n" . $content . '<input type="hidden" name="_csrftoken" value="' . \Hiano\App\App::getRequest()->getCookie('_csrftoken') . '" /></form>';
+            return $ret;
+        }
+    }
 
     public function setTemplateDirs($dirs) {
         $this->tpl_dirs = $dirs;
