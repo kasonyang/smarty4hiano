@@ -31,7 +31,7 @@ class SmartyDriver implements \Hiano\View\ViewDriverInterface {
 
         $smarty->registerPlugin('function', 'url', array($this, 'function_url'));
         $smarty->registerPlugin('function', 'link', array($this, 'function_link'));
-        //$smarty->registerPlugin('block', 'form', array($this, 'block_form'));
+        $smarty->registerPlugin('block', 'form', array($this, 'block_form'));
 
         $plugins_dir = HIANO_APP_PATH . '/Plugin/Smarty';
         if (file_exists($plugins_dir)) {
