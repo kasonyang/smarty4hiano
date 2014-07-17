@@ -73,8 +73,15 @@ class SmartyDriver implements \Hiano\View\ViewDriverInterface {
         return \Hiano\App\App::getBaseUrl() . $path . $params['uri'];
     }
 
-    
-    static function block_form($params, $content, Smarty_Internal_Template $template, &$repeat) {
+    /**
+     * 
+     * @param type $params
+     * @param type $content
+     * @param \Smarty_Internal_Template $template
+     * @param type $repeat
+     * @return string
+     */
+    static function block_form($params, $content, $template, &$repeat) {
         if (!$repeat) {
             $ret = '<form';
             if ($params) {
