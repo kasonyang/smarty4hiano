@@ -21,7 +21,9 @@ Hiano的Smarty模板驱动
 
     参数：
 
-    `uri`:动作路径，指向一个动作，可以带参数，格式为`[[MODULE/]CONTROLLER/]ACTION[?PARAM1=PARAM_VALUE1[&PARME2=PARAM_VALUE2&..]]`
+    `uri`:string，动作路径，指向一个动作，可以带参数，格式为`[[MODULE/]CONTROLLER/]ACTION[?PARAM1=PARAM_VALUE1[&PARME2=PARAM_VALUE2&..]]`
+
+    `return`:boolean，是否将当前地址以参数的形式追加到目标网址上
 
     示例：`{{url uri="index"}}` `{{url uri="home/index/index?id=1"}}`
 
