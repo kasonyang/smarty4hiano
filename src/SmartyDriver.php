@@ -52,7 +52,7 @@ class SmartyDriver implements \Hiano\View\ViewDriverInterface {
             $arr = $this->request->getParameter();
         }
         if (isset($params['append'])) {
-            $arr = array_merge($arr, \Hiano\Url\StandardUrl::query2array($params['append']));
+            $arr = array_merge($arr, \Hiano\Route\StandardUrl::query2array($params['append']));
         }
         $url = \Hiano\App\App::getRouter()->format($arr);
         if ($params['return']) {
